@@ -15,6 +15,17 @@ public class Food {
     private String image;
     @Column(name = "time_ship")
     private String timeShip;
+    @Column(name = "is_freeship")
+    private boolean isFreeShip;
+
+    public boolean isFreeShip() {
+        return isFreeShip;
+    }
+
+    public void setFreeShip(boolean freeShip) {
+        isFreeShip = freeShip;
+    }
+
     @Column(name = "price")
     private double price;
 

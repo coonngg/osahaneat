@@ -8,6 +8,7 @@ import java.util.List;
 
 @Repository
 public interface UserRepository extends JpaRepository<Users, Integer> {
+    // xử lý liên quan đến sơ sở dữ liệu,câu query
     List<Users> findByUserNameAndPassword(String username, String password);
 
     Users findByUserName(String userName);

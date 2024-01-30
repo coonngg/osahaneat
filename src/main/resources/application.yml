@@ -10,6 +10,12 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
+  servlet:
+    multipart:
+      max-file-size: 10MB
 
 jwt:
   privateKey: nujPehAheQbmovH2OXFUWT5y41SUZTXdLmrAT/j2/7I=
+
+FlieUpload:
+  rootPath: C:\Users\nguye\OneDrive\Máy tính\uploads

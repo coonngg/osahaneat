@@ -1,6 +1,7 @@
 package com.congne1.osahaneat.paylod;
 
 public class ResponseData {
+    // trả ra chuỗi json
     private int status = 200;
     private boolean isSuccess = true;
     private String desc;

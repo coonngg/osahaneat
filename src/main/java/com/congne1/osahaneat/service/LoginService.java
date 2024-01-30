@@ -12,18 +12,20 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Service
 public class LoginService implements LoginServiceImp {
     @Autowired
     UserRepository userRepository;
     @Autowired
     PasswordEncoder passwordEncoder;
+
     @Override
-    public List<UserDto> getAllUser(){
+    public List<UserDto> getAllUser() {
         List<Users> listUser = userRepository.findAll();
         List<UserDto> userDtoList = new ArrayList<>();
 
-        for(Users users : listUser){
+        for (Users users : listUser) {
             UserDto userDto = new UserDto();
             userDto.setId(users.getId());
             userDto.setFullName(users.getFullName());
@@ -39,8 +41,9 @@ public class LoginService implements LoginServiceImp {
     public boolean checkLogin(String username, String password) {
 
         Users user = userRepository.findByUserName(username);
-        return passwordEncoder.matches(password,user.getPassword());
-            }
+        return passwordEncoder.matches(password, user.getPassword());// hàm matches so sánh hai password trả về true hay
+                                                                     // false
+    }
 
     @Override
     public boolean addUser(SignUpRequest signUpRequest) {
@@ -58,12 +61,10 @@ public class LoginService implements LoginServiceImp {
         try {
             userRepository.save(users);
             return true;
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
 
-
     }
-
 
 }

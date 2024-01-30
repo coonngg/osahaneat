@@ -5,6 +5,8 @@ import jakarta.persistence.Column;
 import java.util.Date;
 
 public class UserDto {
+    // Data Transfer Object: chuyển đổi dữ liệu từ entity sang class.để tránh vòng
+    // lặp vô tận trong entity(entity không bao giờ xuất trực ra chuỗi json)
     private int id;
 
     private String userName;
